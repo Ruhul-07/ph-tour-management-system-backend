@@ -10,30 +10,30 @@ import { envVars } from "../../app/config/env";
 import { createNewAccessTokenWithRefreshToken, createUserTokens } from "../../app/utils/userTokens";
 import { JwtPayload } from "jsonwebtoken";
 
-const credentialsLogin = async (payload: Partial<IUser>) => {
-      const { email, password } = payload;
+// const credentialsLogin = async (payload: Partial<IUser>) => {
+//       const { email, password } = payload;
 
-      const isUserExist = await User.findOne({ email })
+//       const isUserExist = await User.findOne({ email })
 
-    if (!isUserExist) {
-        throw new AppError(httpStatus.BAD_REQUEST, "Email does not exist")
-    }
+//     if (!isUserExist) {
+//         throw new AppError(httpStatus.BAD_REQUEST, "Email does not exist")
+//     }
 
-    const isPasswordMatched = await bcryptjs.compare(password as string, isUserExist.password as string)
+//     const isPasswordMatched = await bcryptjs.compare(password as string, isUserExist.password as string)
 
-    if (!isPasswordMatched) {
-        throw new AppError(httpStatus.BAD_REQUEST, "Incorrect Password")
-    }
+//     if (!isPasswordMatched) {
+//         throw new AppError(httpStatus.BAD_REQUEST, "Incorrect Password")
+//     }
 
-    const userTokens = createUserTokens(isUserExist)
+//     const userTokens = createUserTokens(isUserExist)
 
-    const {password : pass, ...rest} = isUserExist.toObject()
-    return {
-        accessToken: userTokens.accessToken,
-        refreshToken: userTokens.refreshToken,
-        user: rest 
-    }
-}
+//     const {password : pass, ...rest} = isUserExist.toObject()
+//     return {
+//         accessToken: userTokens.accessToken,
+//         refreshToken: userTokens.refreshToken,
+//         user: rest 
+//     }
+// }
 
 
 const getNewAccessToken = async (refreshToken: string) => {
@@ -62,7 +62,7 @@ const resetPassword = async (oldPassword: string, newPassword: string, decodedTo
 }
 
 export const authServices = {
-    credentialsLogin,
+    // credentialsLogin,
     getNewAccessToken,
     resetPassword
 }
