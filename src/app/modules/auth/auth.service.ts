@@ -4,10 +4,10 @@ import bcryptjs from "bcryptjs";
 import httpStatus from "http-status-codes";
 import { IsActive, IUser } from "../user/user.interface"
 import { User } from "../user/user.model";
-import AppError from "../../app/errorHelpers/AppError";
-import { generateToken, verifyToken } from "../../app/utils/jwt";
-import { envVars } from "../../app/config/env";
-import { createNewAccessTokenWithRefreshToken, createUserTokens } from "../../app/utils/userTokens";
+import AppError from "../../errorHelpers/AppError";
+import { generateToken, verifyToken } from "../../utils/jwt";
+import { envVars } from "../../config/env";
+import { createNewAccessTokenWithRefreshToken, createUserTokens } from "../../utils/userTokens";
 import { JwtPayload } from "jsonwebtoken";
 
 // const credentialsLogin = async (payload: Partial<IUser>) => {

@@ -1,7 +1,7 @@
 
 import { Request, Response } from 'express';
-import { catchAsync } from '../../app/utils/catchAsync';
-import { sendResponse } from '../../app/utils/sendResponse';
+import { catchAsync } from '../../utils/catchAsync';
+import { sendResponse } from '../../utils/sendResponse';
 import { TourService } from './tour.service';
 
 const createTour = catchAsync(async (req: Request, res: Response) => {

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { checkAuth } from "../../app/middlewares/checkAuth";
-import { validateRequest } from "../../app/middlewares/validateRequest";
+import { checkAuth } from "../../middlewares/checkAuth";
+import { validateRequest } from "../../middlewares/validateRequest";
 import { Role } from "../user/user.interface";
 import { DivisionController } from "./division.controller";
 import {

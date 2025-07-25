@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextFunction, Request, Response } from "express";
-import { catchAsync } from "../../app/utils/catchAsync";
-import { sendResponse } from "../../app/utils/sendResponse";
+import { catchAsync } from "../../utils/catchAsync";
+import { sendResponse } from "../../utils/sendResponse";
 import httpStatus from "http-status-codes";
 import { authServices } from "./auth.service";
-import AppError from "../../app/errorHelpers/AppError";
-import { setAuthCookie } from "../../app/utils/setCookie";
-import { createUserTokens } from "../../app/utils/userTokens";
-import { envVars } from "../../app/config/env";
+import AppError from "../../errorHelpers/AppError";
+import { setAuthCookie } from "../../utils/setCookie";
+import { createUserTokens } from "../../utils/userTokens";
+import { envVars } from "../../config/env";
 import passport from "passport";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
