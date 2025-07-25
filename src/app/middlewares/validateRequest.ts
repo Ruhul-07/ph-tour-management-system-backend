@@ -3,6 +3,7 @@ import { ZodObject, ZodRawShape } from "zod"
 
 export const validateRequest = (zodSchema: ZodObject<ZodRawShape>) => async (req: Request, res: Response, next: NextFunction) => {
     try {
+        console.log('BODY BEFORE ZOD VALIDATION:', req.body);
         req.body = await zodSchema.parseAsync(req.body);
         next()
     } catch (error) {
